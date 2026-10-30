@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "project": "ARGUS",
+  "phase": "2a",
+  "runtime_implemented": false,
+  "provider": {
+    "type": "ollama",
+    "base_url": "http://127.0.0.1:11434"
+  },
+  "model": {
+    "id": null,
+    "digest": null,
+    "base_model": null,
+    "family": null,
+    "quantization": null
+  },
+  "execution": {
+    "enabled": false,
+    "approval_required": true,
+    "inherit_external_settings": false
+  },
+  "review": {
+    "language": "de",
+    "require_original_request": true
+  },
+  "access": {
+    "approved_input_files": [],
+    "technical_isolation": "not_implemented"
+  },
+  "handoff": {
+    "source_verification": "always",
+    "independent_review_required_for": [
+      "security_relevant",
+      "complex",
+      "conflicting"
+    ]
+  }
+}
