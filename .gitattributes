@@ -1,0 +1,7 @@
+* text=auto
+*.md text eol=lf
+*.json text eol=lf
+*.toml text eol=lf
+templates/*.sh text eol=lf
+templates/*.in text eol=lf
+docs/ORIGINAL_REQUEST.md -text whitespace=-blank-at-eol,cr-at-eol

@@ -1,0 +1,17 @@
+.gitattributes
+.gitignore
+pyproject.toml
+scripts/Measure-ArgusVM.ps1
+scripts/Prepare-ArgusGuest.ps1
+scripts/Request-ArgusOwnCredential.ps1
+scripts/Send-ArgusConsolePassword.ps1
+templates/argus-guest-startup-repair.sh
+templates/argus-vbox-postinstall.sh
+tests/Test-ArgusBaselineOrdering.ps1
+tests/Test-ArgusConsolePassword.ps1
+tests/Test-ArgusGuestPreparation.ps1
+tests/Test-ArgusGuestStartupRepair.ps1
+tests/Test-ArgusOwnCredential.ps1
+tests/Test-ArgusVMAttribution.ps1
+config/argus.json
+templates/ubuntu-autoinstall-user-data.yaml.in

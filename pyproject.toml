@@ -1,0 +1,10 @@
+[project]
+name = "argus-local-critic"
+version = "0.0.0"
+description = "Independent local review agent: project bootstrap only"
+requires-python = ">=3.12,<3.13"
+dependencies = []
+
+[tool.argus]
+phase = "2a"
+runtime-implemented = false

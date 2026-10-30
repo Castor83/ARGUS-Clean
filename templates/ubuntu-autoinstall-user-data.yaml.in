@@ -1,0 +1,46 @@
+#cloud-config
+# Public template. Prepare-ArgusGuest.ps1 inserts the hash only in the private copy.
+autoinstall:
+  version: 1
+  locale: en_US.UTF-8
+  keyboard:
+    layout: us
+  refresh-installer:
+    update: false
+  network:
+    version: 2
+    ethernets: {}
+  apt:
+    fallback: offline-install
+    geoip: false
+  storage:
+    layout:
+      name: direct
+    swap:
+      size: 0
+  identity:
+    hostname: argus-offline
+    username: argus-setup
+    realname: ARGUS local setup
+    password: '__ARGUS_SETUP_PASSWORD_SHA512__'
+  ssh:
+    install-server: false
+    authorized-keys: []
+    allow-pw: false
+  snaps: []
+  packages: []
+  user-data:
+    disable_root: true
+    package_update: false
+    package_upgrade: false
+    ssh_pwauth: false
+    ntp:
+      enabled: false
+  shutdown: poweroff
+  late-commands:
+    - [curtin, in-target, --target=/target, --, passwd, -l, root]
+    - [curtin, in-target, --target=/target, --, useradd, --user-group, --create-home, --shell, /usr/sbin/nologin, argus]
+    - [curtin, in-target, --target=/target, --, passwd, -l, argus]
+    - [cp, /cdrom/vboxpostinstall.sh, /target/root/argus-vbox-postinstall.sh]
+    - [chmod, '0700', /target/root/argus-vbox-postinstall.sh]
+    - [curtin, in-target, --target=/target, --, /bin/sh, /root/argus-vbox-postinstall.sh, --direct]
